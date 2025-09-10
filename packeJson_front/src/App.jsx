@@ -3,8 +3,8 @@ import Homepage from "./pages/Homepage"
 import Login from "./pages/Login"
 import Registrarse from "./pages/Registrarse"
 import Login_Admin from "./pages/Login_Admin"
-import ProductView from "./pages/detallesproductos"
-import Detalles from "./pages/detalles"
+import Detalles from "./pages/CatalogoFiltrado"
+import DetallesProducto from "./pages/DetallesProducto"
 
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/registrarse" element={<Registrarse/>}/>
         <Route path="/admin" element={<Login_Admin/>}/>
-        <Route path="/detalles" element={<ProductView/>}/>
-        <Route path="/detalless" element={<Detalles/>}/>
+        <Route path="/catalogofiltrado" element={<Detalles/>}/>  {/*Esta ruta va a recibir algo */}
+        <Route path="/detallesproducto" element={<DetallesProducto/>}/>  {/*Esta ruta va a recibir algo */}
         
       </Routes>
     
