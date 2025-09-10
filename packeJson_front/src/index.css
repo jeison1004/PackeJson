@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.personalizado{
+    color: #11843a;
+}
