@@ -6,6 +6,7 @@ const db = require("./config/db");
 
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
+const mayorRatingRoutes = require("./routes/mayorRatingRoutes");
 
 // Inicializamos la aplicación Express
 const app = express();
@@ -44,7 +45,8 @@ app.get("/", (req, res) => {
 
 // Usamos las rutas
 app.use('/users', userRoutes)
-app.use('/productos', productRoutes)
+app.use('/products', productRoutes)
+app.use('/mayorrating', mayorRatingRoutes)
 
 // Prueba de conexión a la base de datos
 db.getConnection()
