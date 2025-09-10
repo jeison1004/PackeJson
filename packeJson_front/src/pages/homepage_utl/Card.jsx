@@ -1,9 +1,9 @@
-const Card = () => {
+const Card = ({product}) => {
   return (
     <div className="max-w-xs rounded-lg overflow-hidden shadow-lg  m-4 bg-gray-300">
   <img className="w-full h-50 mt-5 rounded-lg" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Camisa Blanca Clásica" />
   <div className="p-4">
-    <div className="font-semibold text-lg mb-2">Camisa Blanca Clásica</div>
+    <div className="font-semibold text-lg mb-2">{product.name}</div>
     <div className="flex items-center mb-2">
       <div className="flex text-yellow-400">
         {/* Estrellas completas */}
@@ -17,7 +17,7 @@ const Card = () => {
       <span className="text-gray-600 text-sm ml-2">(23)</span>
     </div>
     <div className="flex justify-between items-center mt-4">
-      <span className="text-xl font-bold text-green-700">$45.99</span>
+      <span className="text-xl font-bold text-green-700">{product.price}</span>
       <button className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md shadow-sm">
         Agregar
       </button>
