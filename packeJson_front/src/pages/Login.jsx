@@ -48,7 +48,7 @@ const Login = () => {
           <h1 className="text-2xl font-semibold text-gray-900">Iniciar Sesión</h1>
           <p className="text-gray-600">Accede a tu cuenta de PackeJSON</p>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-6 px-6 pb-8">
+        <form onSubmit={handleSubmit}  className="space-y-6 px-6 pb-8">
           <div className="space-y-2">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Correo Electrónico
