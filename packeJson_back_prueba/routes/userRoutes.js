@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllUsuarios, loginUsuarios } = require("../controllers/userControllers");
+const { getAllUsuarios, loginUsuarios, registroUsuario } = require("../controllers/userControllers");
 
 // Ruta de Prueba para consultar todos los usuarios
 router.get('/', getAllUsuarios); 
 
 // Ruta que valida los usurios
-router.post('/', loginUsuarios)
+router.post('/', loginUsuarios);
+
+// Ruta para registrarse
+router.put('/', registroUsuario);
 
 module.exports = router;

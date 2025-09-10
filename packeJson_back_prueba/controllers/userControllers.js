@@ -62,7 +62,42 @@ const loginUsuarios = async (req, res) => {
   }
 };
 
+// Controller para el registro del usuario
+// Controlador para crear un nuevo usuario
+const registroUsuario = async (req, res) => {
+  const { name, last_name, email, password, phone_number } = req.body;
+
+  try {
+    // 1. Verificar si el usuario ya existe en la base de datos por email
+    const [existingUser] = await db.query('SELECT email FROM users WHERE email = ?', [email]);
+    if (existingUser.length > 0) {
+      return res.status(400).json({ msg: 'El usuario con este correo ya existe' });
+    }
+
+    // 2. Hashear la contraseña antes de guardarla
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // 3. Insertar el nuevo usuario en la base de datos
+    const [result] = await db.query(
+      'INSERT INTO users (name, last_name, email, password, phone_number, created_at, rol) VALUES (?, ?, ?, ?, ?, NOW(), ?)',
+      [name, last_name, email, hashedPassword, phone_number, 'user'] // 'user' es el rol por defecto
+    );
+
+    // 4. Devolver una respuesta exitosa
+    res.status(201).json({ 
+      msg: 'Usuario registrado exitosamente', 
+      userId: result.insertId 
+    });
+
+  } catch (err) {
+    console.error('Error al registrar usuario:', err);
+    res.status(500).json({ error: 'Ocurrió un error interno al registrar el usuario' });
+  }
+};
+
 module.exports = {
   getAllUsuarios,
-  loginUsuarios
+  loginUsuarios,
+  registroUsuario
 };
