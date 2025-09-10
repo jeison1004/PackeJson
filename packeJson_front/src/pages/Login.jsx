@@ -38,7 +38,7 @@ const Login = () => {
           <div className="text-center space-y-2 pt-2">
             <p className="text-sm">
               <span className="text-gray-600">¿No tienes cuenta? </span>
-              <a href="#" className="text-green-700 hover:text-green-800 font-medium">
+              <a href="/registrarse" className="text-green-700 hover:text-green-800 font-medium">
                 Regístrate
               </a>
             </p>
