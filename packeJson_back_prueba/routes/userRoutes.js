@@ -7,9 +7,9 @@ const { getAllUsuarios, loginUsuarios, registroUsuario } = require("../controlle
 router.get('/', getAllUsuarios); 
 
 // Ruta que valida los usurios
-router.post('/', loginUsuarios);
+router.post('/login', loginUsuarios);
 
 // Ruta para registrarse
-router.put('/', registroUsuario);
+router.post('/registro', registroUsuario);
 
 module.exports = router;

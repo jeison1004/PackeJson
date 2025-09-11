@@ -63,7 +63,7 @@ const loginUsuarios = async (req, res) => {
 };
 
 // Controller para el registro del usuario
-// Controlador para crear un nuevo usuario
+
 const registroUsuario = async (req, res) => {
   const { name, last_name, email, password, phone_number } = req.body;
 
@@ -95,6 +95,8 @@ const registroUsuario = async (req, res) => {
     res.status(500).json({ error: 'Ocurrió un error interno al registrar el usuario' });
   }
 };
+
+
 
 module.exports = {
   getAllUsuarios,
