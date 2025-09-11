@@ -59,7 +59,7 @@ const Registrarse = () => {
 
     try {
       // Replace with your actual backend URL
-      const response = await fetch('http://localhost:3002/users', {
+      const response = await fetch('http://localhost:3002/users/registro', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
