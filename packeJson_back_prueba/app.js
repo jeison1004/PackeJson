@@ -5,6 +5,7 @@ const cors = require("cors");
 const db = require("./config/db");
 
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 // Inicializamos la aplicación Express
 const app = express();
@@ -43,6 +44,7 @@ app.get("/", (req, res) => {
 
 // Usamos las rutas
 app.use('/users', userRoutes)
+app.use('/products', productRoutes)
 
 // Prueba de conexión a la base de datos
 db.getConnection()
